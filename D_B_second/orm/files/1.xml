@@ -1,0 +1,38 @@
+  <mdb1>
+	<Cloud_storage>
+		<name>Mini</name>
+		<date_s_add>2014-10-10 21:21:20</date_s_add>
+		<date_s_change>2014-10-10 21:21:20</date_s_change>
+	</Cloud_storage>
+
+
+	<Cloud_storage>
+		<name>Sasha</name>
+		<date_s_add>2000-10-10 21:21:20</date_s_add>
+		<date_s_change>2000-10-10 21:21:20</date_s_change>
+	</Cloud_storage>
+
+	<Cloud_storage>
+		<name>Darina</name>
+		<date_s_add>1996-10-10 21:21:20</date_s_add>
+		<date_s_change>1996-10-10 21:21:20</date_s_change>
+	</Cloud_storage>
+
+	<user>
+		<name_u>Miny</name_u>
+		<B_day>2000-02-02</B_day>
+		<year>19</year>
+	</user>
+
+	<user>
+		<name_u>U_S</name_u>
+		<B_day>2015-02-02</B_day>
+		<year>20</year>
+	</user>
+
+	<user>
+		<name_u>U_D</name_u>
+		<B_day>1996-02-02</B_day>
+		<year>33</year>
+	</user>
+  </mdb1>

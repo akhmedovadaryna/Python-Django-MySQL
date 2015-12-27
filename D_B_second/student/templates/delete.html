@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Del</title>
+</head>
+<body>
+    <h1>Del</h1>
+
+        {% if file.errors %}
+            <p style="color: red;">
+                Please correct the error{{ file.errors|pluralize }} below.
+            </p>
+        {% endif %}
+
+        <form action="" method="post">
+            <table>
+
+                {{ file.as_table }}
+            </table>
+            {% csrf_token %}
+            <input type="submit" value="Submit">
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change</title>
+</head>
+<body>
+    <h1>Change</h1>
+
+    {% if form == None %}
+    {% if user.errors %}
+        <p style="color: red;">
+            Please correct the error{{ user.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">
+        <table>
+            {{ user.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% else %}
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+    <form action="" method="post">
+        <table>
+            <input name = "key" value="{{ name_u_edit }}">
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% endif %}
+
+</body>
+</html>

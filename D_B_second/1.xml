@@ -1,0 +1,25 @@
+# coding: utf8
+
+xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<mdb1>
+	<Cloud_storage>
+		<idstorage>5</idstorage>
+		<name>Mini</name>
+		<date_s_add>2015-15-15 15:15:15</date_s_add>
+		<date_s_change>2015-15-15 15:15:15</date_s_change> 
+	</Cloud_storage>
+
+	<File>
+		<idFile> </idFile>
+		<name_f> </name_f>
+		<size> </size>
+		<type> </type>
+		<user_name_u> </user_name_u>
+		<Cloud_storage_idstorage> </Cloud_storage_idstorage>
+	</File>
+
+	<user>
+		<name_u>Miny</name_u>
+		<B_day>2000-02-02</B_day>
+	</user>
+</mbd1>

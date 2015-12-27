@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+table{
+    padding: 10px;
+    margin: auto;
+    background: #FCD4E2; }
+
+    </style>
+</head>
+<body>
+
+
+<h1>All information</h1>
+
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for file in File %}
+     <tr>
+         <td>{{ file.idFile }}</td>
+         <td>{{ file.name_f }}</td>
+         <td>{{ file.size }}</td>
+         <td>{{ file.type }}</td>
+         <td>{{ file.name_u }}</td>
+         <td>{{ file.year }}</td>
+         <td>{{ file.B_day }}</td>
+         <td>{{ file.idstorage }}</td>
+         <td>{{ file.name }}</td>
+         <td>{{ file.date_s_add }}</td>
+         <td>{{ file.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+
+
+<h2 style="center">Search in general table</h2>
+
+    <form action="" method="post">
+        <table>
+            {{ search.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" name="key"  value="search">
+    </form>
+
+ {% if search_1 != None %}
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for search_1_1 in search_1 %}
+     <tr>
+         <td>{{ search_1_1.idFile }}</td>
+         <td>{{ search_1_1.name_f }}</td>
+         <td>{{ search_1_1.size }}</td>
+         <td>{{ search_1_1.type }}</td>
+         <td>{{ search_1_1.name_u }}</td>
+         <td>{{ search_1_1.year }}</td>
+         <td>{{ search_1_1.B_day }}</td>
+         <td>{{ search_1_1.idstorage }}</td>
+         <td>{{ search_1_1.name }}</td>
+         <td>{{ search_1_1.date_s_add }}</td>
+         <td>{{ search_1_1.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/student/addfile"><button>Add file</button></a>
+<a href="/student/change_file"><button>Change file</button></a>
+<a href="/student/delete"><button>Delete file</button></a>
+
+
+
+
+
+
+
+
+
+<h2>User</h2>
+
+
+ <table border="1">
+     <th>Login</th>
+     <th>B-day</th>
+     <th>Year</th>
+
+     {% for User in user %}
+     <tr>
+         <td>{{ User.name_u }}</td>
+         <td>{{ User.B_day }}</td>
+         <td>{{ User.year }}</td>
+     </tr>
+     {% endfor %}
+</table>
+
+
+<a href="/student/user_add"><button>Add user</button></a>
+
+<a href="/student/change"><button>Change user</button></a>
+
+
+
+ <h2> Search in user</h2>
+
+   <form action="" method="post">
+        <select name="Poisk">
+
+           <p>
+
+                 {% for user_p in user %}
+                     <option name="poisk1"> {{ user_p.name_u }} </option>
+                 {% endfor %}
+
+           </p>
+               {% csrf_token %}
+
+        </select>
+
+        <input type="submit" name="key" value="Poisk">
+    </form>
+
+
+
+ {% if p != None %}
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for p_u in p %}
+     <tr>
+         <td>{{ p_u.idFile }}</td>
+         <td>{{ p_u.name_f }}</td>
+         <td>{{ p_u.size }}</td>
+         <td>{{ p_u.type }}</td>
+         <td>{{ p_u.name_u }}</td>
+         <td>{{ p_u.year }}</td>
+         <td>{{ p_u.B_day }}</td>
+         <td>{{ p_u.idstorage }}</td>
+         <td>{{ p_u.name }}</td>
+         <td>{{ p_u.date_s_add }}</td>
+         <td>{{ p_u.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+{% endif %}
+
+
+    <form action="" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" name="key"  value="Diapason">
+    </form>
+
+{% if Dia != None %}
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for d_p in Dia %}
+     <tr>
+         <td>{{ d_p.idFile }}</td>
+         <td>{{ d_p.name_f }}</td>
+         <td>{{ d_p.size }}</td>
+         <td>{{ d_p.type }}</td>
+         <td>{{ d_p.name_u }}</td>
+         <td>{{ d_p.year }}</td>
+         <td>{{ d_p.B_day }}</td>
+         <td>{{ d_p.idstorage }}</td>
+         <td>{{ d_p.name }}</td>
+         <td>{{ d_p.date_s_add }}</td>
+         <td>{{ d_p.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+{% endif %}
+
+
+
+
+<h2>Cloud storage</h2>
+
+ <table border="1">
+     <th>ID</th>
+     <th>Name</th>
+     <th>Data add</th>
+     <th>Data change</th>
+
+     {% for cloud_storage in Cloud_storage %}
+     <tr>
+         <td>{{ cloud_storage.idstorage}}</td>
+         <td>{{ cloud_storage.name}}</td>
+         <td>{{ cloud_storage.date_s_add}}</td>
+         <td>{{ cloud_storage.date_s_change}}</td>
+     </tr>
+     {% endfor %}
+</table>
+
+
+<a href="/student/addc"><button>Add cloud</button></a>
+
+
+
+<h2>Search in Cloud storage</h2>
+
+
+
+  <form action="" method="post">
+        <select name="Poisk_1">
+
+           <p>
+
+                 {% for cloud in Cloud_storage %}
+                     <option name="poisk2"> {{ cloud.name }} </option>
+                 {% endfor %}
+
+           </p>
+               {% csrf_token %}
+
+        </select>
+
+        <input type="submit" name="key" value="Poisk_1">
+    </form>
+
+ {% if c != None %}
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for c_n in c %}
+     <tr>
+         <td>{{ c_n.idFile }}</td>
+         <td>{{ c_n.name_f }}</td>
+         <td>{{ c_n.size }}</td>
+         <td>{{ c_n.type }}</td>
+         <td>{{ c_n.name_u }}</td>
+         <td>{{ c_n.year }}</td>
+         <td>{{ c_n.B_day }}</td>
+         <td>{{ c_n.idstorage }}</td>
+         <td>{{ c_n.name }}</td>
+         <td>{{ c_n.date_s_add }}</td>
+         <td>{{ c_n.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+{% endif %}
+
+
+
+
+    <form action="" method="post">
+        <table>
+            {{ form1.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" name="key"  value="Diapason_1">
+    </form>
+
+{% if Dia_1 != None %}
+ <table border="1">
+     <th>ID</th>
+     <th>Name file</th>
+     <th>Size file</th>
+     <th>Type file</th>
+     <th>Login</th>
+     <th>Year</th>
+     <th>B-day</th>
+     <th>Storage id</th>
+     <th>Name storage</th>
+     <th>Data add</th>
+     <th>Data change</th>
+        {% for d_p_1 in Dia_1 %}
+     <tr>
+         <td>{{ d_p_1.idFile }}</td>
+         <td>{{ d_p_1.name_f }}</td>
+         <td>{{ d_p_1.size }}</td>
+         <td>{{ d_p_1.type }}</td>
+         <td>{{ d_p_1.name_u }}</td>
+         <td>{{ d_p_1.year }}</td>
+         <td>{{ d_p_1.B_day }}</td>
+         <td>{{ d_p_1.idstorage }}</td>
+         <td>{{ d_p_1.name }}</td>
+         <td>{{ d_p_1.date_s_add }}</td>
+         <td>{{ d_p_1.date_s_change }}</td>
+     </tr>
+     {% endfor %}
+</table>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+<h1>Reset</h1>
+
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+       <input type="submit" name="key" value="Reset">
+    </form>
+
+
+
+
+</body>
+</html>
